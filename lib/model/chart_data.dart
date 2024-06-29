@@ -1,9 +1,16 @@
-import "package:flutter/material.dart";
+import 'package:collection/collection.dart';
 
-class ChartData {
-  final String x;
-  final num y;
-  final Color color;
+class PricePoint {
+  final double x;
+  final double y;
 
-  ChartData(this.x, this.y, this.color);
+  PricePoint({required this.x, required this.y});
+}
+
+List<PricePoint> get pricePoint {
+  final data = <double>[100, 120, 210, 300];
+  return data
+      .mapIndexed(
+          ((index, element) => PricePoint(x: index.toDouble(), y: element)))
+      .toList();
 }
