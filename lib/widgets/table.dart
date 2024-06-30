@@ -9,14 +9,14 @@ class TablaView extends StatelessWidget {
   Widget build(BuildContext context) {
 // Example data
     const String categoria = 'Entretenimiento';
-    const double gasto = 150;
-    const double prediccion = 100;
-    const double ahorro = ((gasto - prediccion) / gasto) * 100;
+    const double gasto = 290;
+    const double prediccion = 260;
+    final double ahorro = ((gasto - prediccion).abs() / gasto) * 100;
 
     // datos de la tabla
 
     // Determine color based on the condition
-    const Color ahorroColor = prediccion > gasto ? Colors.red : Colors.green;
+    const Color ahorroColor = gasto > prediccion ? Colors.red : Colors.green;
 
     return SingleChildScrollView(
       child: Padding(

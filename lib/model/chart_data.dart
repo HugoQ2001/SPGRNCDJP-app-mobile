@@ -8,7 +8,7 @@ class PricePoint {
 }
 
 List<PricePoint> get pricePoint {
-  final data = <double>[100, 120, 210, 300];
+  final data = <double>[100, 120, 300, 210];
   return data
       .mapIndexed(
           ((index, element) => PricePoint(x: index.toDouble(), y: element)))
